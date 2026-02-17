@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sbinc Solutions - Free Consultation</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/pictures/SBINC_Logo_.png">
+    <link rel="apple-touch-icon" href="images/pictures/SBINC_Logo_.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Get in touch with Sbinc Solutions for a free consultation on your next engineering or solar project. We are ready to discuss your needs.">
+    <meta name="keywords"
+        content="Contact SBINC Solutions, Engineering Consultation, Solar Project Inquiry, Ghana Engineering Company">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sbincsolutions.com/contact.html">
+    <meta property="og:title" content="Contact Us | Sbinc Solutions">
+    <meta property="og:description"
+        content="Reach out to Sbinc Solutions for professional engineering and construction services.">
+    <meta property="og:image" content="images/pictures/SBINC_Logo_.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form-side h2,
+        .contact-info-side h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        .form-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-row input,
+        .form-row textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .btn-send {
+            background: var(--brand-green);
+            color: var(--brand-black);
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .btn-send:hover {
+            background: var(--brand-red);
+            /* Hover to red for consistent branding, or primary-dark? User asked for green instead of red. Let's use primary-dark or black for hover to avoid red if they dislike it. But brand-red is the accent. User said "use the brand green instead of the red". I will use primary-dark. */
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .contact-item p {
+            color: #666;
+            line-height: 1.6;
+            margin-left: 28px;
+        }
+
+        .contact-item .icon {
+            font-size: 1.2rem;
+            color: var(--brand-green);
+        }
+
+        .contact-item .phone-number {
+            color: var(--brand-black);
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-item .email-link {
+            color: var(--brand-green);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="backToTop" aria-label="back to top">↑</button>
+
+    <header class="site-header" id="mainNav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display: block;">
+                    <img src="images/pictures/SBINC_Logo_.png" alt="Sbinc Solutions" style="height: 45px; display: block;">
+                </a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle"
+                aria-label="menu"><span></span><span></span><span></span></button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta hide-mobile">
+                <a href="contact.html" class="btn btn-primary btn-sm">Free Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch for a free consultation on your next engineering or solar project.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-form-side">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="emailAddr">Email Address *</label>
+                                <input type="email" id="emailAddr" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="phoneNum">Phone Number</label>
+                                <input type="tel" id="phoneNum">
+                            </div>
+                            <div class="form-row">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="msg">Message *</label>
+                                <textarea id="msg" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-send">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-side">
+                        <div class="contact-info-wrapper">
+                            <h2>Contact Information</h2>
+
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h5>Address</h5>
+                                    <p>Box KN 4850 Kaneshie, Accra – Ghana</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h5>Phone Numbers</h5>
+                                    <p>
+                                        <a href="tel:+233246666834"
+                                            style="color: var(--brand-black); text-decoration: none;">+233 246 666
+                                            834</a> <br>
+                                        <a href="tel:+233277637970"
+                                            style="color: var(--brand-black); text-decoration: none;">+233 277 637
+                                            970</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email Address</h5>
+                                    <p><a href="mailto:services@sbincsolutions.com"
+                                            class="email-link">services@sbincsolutions.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h5>Business Hours</h5>
+                                    <p>
+                                        Monday - Friday: 8:00 AM - 5:00 PM<br>
+                                        Saturday: 9:00 AM - 2:00 PM<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="section bg-light" style="text-align: center;">
+            <div class="container">
+                <h3>Visit Our Office</h3>
+                <p style="margin-bottom: 2rem;">We are located in Accra, Ghana. Use the map below to find us.</p>
+                <div
+                    style="width: 100%; height: 400px; background: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <p style="color: #64748b;">[Google Map Placeholder]</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-main">
+                    <!-- Col 1: Brand & About -->
+                    <div class="footer-col">
+                        <a href="index.html" class="footer-logo">
+                            <img src="images/pictures/SBINC_Logo_.png" alt="Sbinc Solutions" style="height: 50px;">
+                        </a>
+                        <h3 style="margin-bottom: 1rem;">About Sbinc Solutions</h3>
+                        <p class="footer-about-text">
+                            Leading provider of turnkey engineering solutions across Ghana. Transforming infrastructure
+                            with precision and innovation.
+                        </p>
+                        <div class="footer-socials">
+                            <a href="#" class="social-icon">f</a>
+                            <a href="#" class="social-icon">in</a>
+                            <a href="#" class="social-icon">IG</a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <div class="footer-links">
+                            <a href="about.html">About Us</a>
+                            <a href="services.html">Services</a>
+                            <a href="projects.html">Our Projects</a>
+                            <a href="impact.html">Impact</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <!-- Col 3: Contact Info -->
+                    <div class="footer-col">
+                        <h3>Contact Info</h3>
+
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-label">Email:</span>
+                            <a href="mailto:services@sbincsolutions.com" class="footer-contact-value"
+                                style="color: inherit; text-decoration: none;">services@sbincsolutions.com</a>
+                        </div>
+
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-label">Phone:</span>
+                            <span class="footer-contact-value">+233 246 666 834 | +233 277 637 970</span>
+                        </div>
+
+                        <div class="footer-contact-item">
+                            <span class="footer-contact-label">Address:</span>
+                            <span class="footer-contact-value">
+                                Box KN 4850 Kaneshie, Accra – Ghana
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span>&copy; 2026 Sbinc Solutions. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
+
