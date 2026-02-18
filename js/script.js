@@ -170,17 +170,17 @@
 
     // List of images for the full gallery
     const galleryImages = [
-        'images/pictures/sb1.png',
+        'images/pictures/sb1.jpg',
         'images/pictures/sb2.jpeg',
         'images/pictures/sb3.jpg',
-        'images/pictures/sb4.PNG',
-        'images/pictures/sb5.png',
+        'images/pictures/sb4.png',
+        'images/pictures/sb5.jpg',
         'images/pictures/sb6.jpeg',
         'images/pictures/sb7.jpg',
-        'images/pictures/sb8.png',
+        'images/pictures/sb8.jpg',
         'images/pictures/sb9.jpeg',
         'images/pictures/sb10.jpg',
-        'images/pictures/sb11.png',
+        'images/pictures/sb11.jpg',
         'images/pictures/sb12.jpeg',
         'images/pictures/sb13.jpeg',
         'images/pictures/sb14.jpeg',
@@ -232,4 +232,5 @@
         document.body.style.overflow = 'hidden';
     }
 })();
+
 
