@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host       = 'sbincsolutions.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'services@sbincsolutions.com';
-        $mail->Password   = 'YOUR_EMAIL_PASSWORD_HERE'; // User needs to replace this
+        $mail->Password   = 'Services4SBINC!'; // User needs to replace this
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
