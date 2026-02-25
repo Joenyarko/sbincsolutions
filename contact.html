@@ -173,28 +173,28 @@
                 <div class="contact-container">
                     <div class="contact-form-side">
                         <h2>Send Us a Message</h2>
-                        <form id="contactForm">
+                        <form id="contactForm" action="php/contact-handler.php" method="POST">
                             <div class="form-row">
                                 <label for="fullName">Full Name *</label>
-                                <input type="text" id="fullName" required>
+                                <input type="text" id="fullName" name="fullName" required>
                             </div>
                             <div class="form-row">
                                 <label for="emailAddr">Email Address *</label>
-                                <input type="email" id="emailAddr" required>
+                                <input type="email" id="emailAddr" name="emailAddr" required>
                             </div>
                             <div class="form-row">
                                 <label for="phoneNum">Phone Number</label>
-                                <input type="tel" id="phoneNum">
+                                <input type="tel" id="phoneNum" name="phoneNum">
                             </div>
                             <div class="form-row">
                                 <label for="subject">Subject *</label>
-                                <input type="text" id="subject" required>
+                                <input type="text" id="subject" name="subject" required>
                             </div>
                             <div class="form-row">
                                 <label for="msg">Message *</label>
-                                <textarea id="msg" rows="6" required></textarea>
+                                <textarea id="msg" name="msg" rows="6" required></textarea>
                             </div>
-                            <button type="submit" class="btn-send">Send Message</button>
+                            <button type="submit" class="btn-send" id="submitBtn">Send Message</button>
                         </form>
                     </div>
 
@@ -319,6 +319,57 @@
     </main>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const formData = new FormData(form);
+
+            // UI State: Loading
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending...';
+
+            fetch('php/contact-handler.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: data.message,
+                            confirmButtonColor: '#2563eb'
+                        });
+                        form.reset();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: data.message,
+                            confirmButtonColor: '#eb2525'
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'An error occurred while sending your message. Please try again later.',
+                        confirmButtonColor: '#eb2525'
+                    });
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Send Message';
+                });
+        });
+    </script>
 </body>
 
 </html>
